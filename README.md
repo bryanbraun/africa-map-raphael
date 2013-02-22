@@ -1,4 +1,11 @@
-africa-map-raphael
-==================
+Africa Map with Raphael
+=======================
+by Bryan Braun
+http://bryanbraun.com
 
-A Javascript-friendly map of Africa using the Raphael.js library.
+
+This is a Javascript-friendly map of Africa using the Raphael.js library.
+
+##Thanks to:
+- [Rob Flaherty](https://github.com/robflaherty) and his [us-map-raphael](https://github.com/robflaherty/us-map-raphael) project.
+- The [Raphael](http://raphaeljs.com) project
