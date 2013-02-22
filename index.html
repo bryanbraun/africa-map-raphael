@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Africa map Using Raphael.js</title>
+    <style>
+      /**
+       * Basic styles for container and hover states.
+       */
+      #container {
+        width: 620px;
+        height: 690px;
+      }
+      #container path:hover {
+        fill: #cacaca;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container"></div><!-- html container for the map -->
+
+    <script src="raphael-min.js"></script><!-- load Raphael library -->
+    <script src="africa-svg.js"></script><!-- load africaMap paths -->
+    <script>
+      window.onload = function () {
+        // Create canvas and define attributes for each path.
+        var R = Raphael("container", 620, 690),
+          attr = {
+          "fill": "#b9b9b9",
+          "fill-opacity": "1",
+          "stroke": "#fff",
+          "stroke-opacity": "1",
+          "stroke-miterlimit": "4",
+          "stroke-width": "0.5",
+          "stroke-dasharray": "none",
+          "type:": "path" /**/
+        }; 
+        // Draw Map, scale appropriately, and store Raphael paths.
+        var nation;
+        for (nation in africaMap) {
+          R.path(africaMap[nation]).transform("s0.06,0.06,60,0").attr(attr);
+        }          
+      };
+    </script>
+  </body>
+</html>
