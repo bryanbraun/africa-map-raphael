@@ -23,23 +23,24 @@
     <script src="../africa-svg.js"></script><!-- load africaMap paths -->
     <script>
       window.onload = function () {
-        // Create canvas and define attributes for each path.
+        // Create canvas and define attributes shared by all paths.
         var R = Raphael("container", 620, 690),
           attr = {
           "fill": "#b9b9b9",
-          "fill-opacity": "1",
           "stroke": "#fff",
-          "stroke-opacity": "1",
           "stroke-miterlimit": "4",
-          "stroke-width": "0.5",
-          "stroke-dasharray": "none",
-          "type:": "path" /**/
+          "stroke-width": "1",
+          "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
         }; 
-        // Draw Map, scale appropriately, and store Raphael paths.
-        var nation;
-        for (nation in africaMap) {
-          R.path(africaMap[nation]).transform("s0.06,0.06,60,0").attr(attr);
-        }          
+        // Draw Map
+        for (var nation in africaMap) {
+          // Draw a path, then apply attributes to it.
+          var newpath = R.path(africaMap[nation]).attr(attr);
+          // Name the internal Raphael id after the africaMap property name.
+          newpath.id = nation;
+        }
+        // For an example of raphael path id names, uncomment line below.
+        // var path1 = R.getById('tanzania').attr({"fill": "green"});
       };
     </script>
   </body>
