@@ -20,7 +20,7 @@
     <div id="container"></div><!-- html container for the map -->
 
     <script src="raphael-min.js"></script><!-- load Raphael library -->
-    <script src="../africa-svg.js"></script><!-- load africaMap paths -->
+    <script src="../africa-paths.js"></script><!-- load our paths -->
     <script>
       window.onload = function () {
         // Create canvas and define attributes shared by all paths.
@@ -32,15 +32,20 @@
           "stroke-width": "1",
           "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
         }; 
-        // Draw Map
-        for (var nation in africaMap) {
+        // Define map object.
+        var africaMap = {};
+        for (var nation in africaPaths) {
           // Draw a path, then apply attributes to it.
-          var newpath = R.path(africaMap[nation]).attr(attr);
-          // Name the internal Raphael id after the africaMap property name.
-          newpath.id = nation;
+          africaMap[nation] = R.path(africaPaths[nation]).attr(attr);
+          // Name the internal Raphael id after the africaPaths property name.
+          africaMap[nation].id = nation;
+          // Name the element id after the africaPaths property name.
+          africaMap[nation].node.id = nation;
         }
-        // For an example of raphael path id names, uncomment line below.
-        // var path1 = R.getById('tanzania').attr({"fill": "green"});
+        // For an example of interaction via Raphael uncomment line below.
+        // var demo1 = R.getById('tanzania').attr({"fill": "green"});
+        // For an example of interaction via javascript, uncomment the line below.
+        // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";
       };
     </script>
   </body>
