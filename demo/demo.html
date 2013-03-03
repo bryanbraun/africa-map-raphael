@@ -32,7 +32,7 @@
           "stroke-width": "1",
           "transform": "s0.06,0.06,60,0" // Scales the path to a useful size.
         }; 
-        // Define map object.
+        // Define map object. 
         var africaMap = {};
         for (var nation in africaPaths) {
           // Draw a path, then apply attributes to it.
@@ -42,7 +42,7 @@
           // Name the element id after the africaPaths property name.
           africaMap[nation].node.id = nation;
         }
-        // For an example of interaction via Raphael uncomment line below.
+        // For an example of interaction via Raphael, uncomment the line below.
         // var demo1 = R.getById('tanzania').attr({"fill": "green"});
         // For an example of interaction via javascript, uncomment the line below.
         // var demo2 = document.getElementById('south_africa'); demo2.style.fill= "green";

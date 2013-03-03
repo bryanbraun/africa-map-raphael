@@ -1,6 +1,6 @@
 /**
  * SVG Paths for each country in Africa.
- * Lakes are available for use, but commented by default.
+ * Lakes are available but commented by default.
  * SVG source: http://commons.wikimedia.org/wiki/File:Africa_1a.svg
  */
 var africaPaths = {
